@@ -1,3 +1,4 @@
+
 import { LocalizedText } from '@/types';
 
 type TranslationKey = 
@@ -9,7 +10,9 @@ type TranslationKey =
   | 'noStates' | 'noStatesDescription' | 'deleteStateWarning' | 'addRecommendation' | 'editRecommendation'
   | 'deleteRecommendationWarning' | 'noRecommendations' | 'noRecommendationsDescription'
   | 'dimension' | 'gap' | 'priority' | 'actionsOnePerLine' | 'selectDimension' | 'selectGap'
-  | 'selectPriority';
+  | 'selectPriority' | 'gapSettingsTitle' | 'gapThresholds' | 'lowGapThreshold' | 'mediumGapThreshold'
+  | 'gapDescriptions' | 'lowGapDescription' | 'mediumGapDescription' | 'highGapDescription'
+  | 'updateSettings' | 'settingsUpdated';
 
 
 export const translations: Record<TranslationKey, LocalizedText> = {
@@ -55,4 +58,15 @@ export const translations: Record<TranslationKey, LocalizedText> = {
   selectDimension: { en: 'Select a dimension', es: 'Selecciona una dimensión', fr: 'Sélectionnez une dimension' },
   selectGap: { en: 'Select a gap label', es: 'Selecciona una etiqueta de brecha', fr: 'Sélectionnez une étiquette d\'écart' },
   selectPriority: { en: 'Select a priority', es: 'Selecciona una prioridad', fr: 'Sélectionnez une priorité' },
+  gapSettingsTitle: { en: 'Gap Analysis Settings', es: 'Ajustes de Análisis de Brechas', fr: 'Paramètres d\'Analyse d\'Écart' },
+  gapThresholds: { en: 'Gap Thresholds', es: 'Umbrales de Brecha', fr: 'Seuils d\'Écart' },
+  lowGapThreshold: { en: 'Low Gap Threshold', es: 'Umbral de Brecha Baja', fr: 'Seuil d\'Écart Faible' },
+  mediumGapThreshold: { en: 'Medium Gap Threshold', es: 'Umbral de Brecha Media', fr: 'Seuil d\'Écart Moyen' },
+  gapDescriptions: { en: 'Gap Descriptions', es: 'Descripciones de Brecha', fr: 'Descriptions d\'Écart' },
+  lowGapDescription: { en: 'Low Gap Description', es: 'Descripción de Brecha Baja', fr: 'Description de Faible Écart' },
+  mediumGapDescription: { en: 'Medium Gap Description', es: 'Descripción de Brecha Media', fr: 'Description d\'Écart Moyen' },
+  highGapDescription: { en: 'High Gap Description', es: 'Descripción de Brecha Alta', fr: 'Description d\'Écart Élevé' },
+  updateSettings: { en: 'Update Settings', es: 'Actualizar Ajustes', fr: 'Mettre à jour les Paramètres' },
+  settingsUpdated: { en: 'Settings updated successfully!', es: '¡Ajustes actualizados correctamente!', fr: 'Paramètres mis à jour avec succès!' },
 };
+

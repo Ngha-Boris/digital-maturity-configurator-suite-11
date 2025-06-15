@@ -74,6 +74,11 @@ const appReducer = (state: Config, action: Action): Config => {
         ...state,
         recommendations: state.recommendations.filter(r => r.id !== action.payload)
       };
+    case 'UPDATE_GAP_SETTINGS':
+      return {
+        ...state,
+        gapSettings: action.payload,
+      };
     default:
       return state;
   }

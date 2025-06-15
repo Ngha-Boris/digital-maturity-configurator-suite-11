@@ -59,4 +59,6 @@ export type Action =
   | { type: 'DELETE_STATE'; payload: { dimensionId: string; stateType: 'currentStates' | 'desiredStates'; stateId: string } }
   | { type: 'ADD_RECOMMENDATION'; payload: Recommendation }
   | { type: 'UPDATE_RECOMMENDATION'; payload: Recommendation }
-  | { type: 'DELETE_RECOMMENDATION'; payload: string };
+  | { type: 'DELETE_RECOMMENDATION'; payload: string }
+  | { type: 'UPDATE_GAP_SETTINGS'; payload: GapSettings };
+
