@@ -1,6 +1,5 @@
-
 import React, { createContext, useReducer, useEffect, useContext, ReactNode, useCallback } from 'react';
-import { Config, Language, LocalizedText, Action } from '@/types';
+import { Config, Language, LocalizedText, Action, StateItem } from '@/types';
 import { initialConfig } from '@/data/initialConfig';
 import { translations } from '@/data/translations';
 
@@ -31,23 +30,23 @@ const appReducer = (state: Config, action: Action): Config => {
         dimensions: state.dimensions.filter(d => d.id !== action.payload)
       };
     case 'ADD_STATE': {
-      const { dimensionId, stateType, state } = action.payload;
+      const { dimensionId, stateType, state: newStateItem } = action.payload;
       return {
         ...state,
         dimensions: state.dimensions.map(d =>
           d.id === dimensionId
-            ? { ...d, [stateType]: [...d[stateType], state] }
+            ? { ...d, [stateType]: [...d[stateType], newStateItem] }
             : d
         ),
       };
     }
     case 'UPDATE_STATE': {
-      const { dimensionId, stateType, state } = action.payload;
+      const { dimensionId, stateType, state: updatedStateItem } = action.payload;
       return {
         ...state,
         dimensions: state.dimensions.map(d =>
           d.id === dimensionId
-            ? { ...d, [stateType]: d[stateType].map(s => s.id === state.id ? state : s) }
+            ? { ...d, [stateType]: d[stateType].map(s => s.id === updatedStateItem.id ? updatedStateItem : s) }
             : d
         ),
       };
