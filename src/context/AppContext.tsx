@@ -62,6 +62,18 @@ const appReducer = (state: Config, action: Action): Config => {
             ),
         };
     }
+    case 'ADD_RECOMMENDATION':
+      return { ...state, recommendations: [...state.recommendations, action.payload] };
+    case 'UPDATE_RECOMMENDATION':
+      return {
+        ...state,
+        recommendations: state.recommendations.map(r => r.id === action.payload.id ? action.payload : r)
+      };
+    case 'DELETE_RECOMMENDATION':
+      return {
+        ...state,
+        recommendations: state.recommendations.filter(r => r.id !== action.payload)
+      };
     default:
       return state;
   }

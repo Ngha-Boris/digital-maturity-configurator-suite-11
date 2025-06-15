@@ -56,4 +56,7 @@ export type Action =
   | { type: 'DELETE_DIMENSION'; payload: string }
   | { type: 'ADD_STATE'; payload: { dimensionId: string; stateType: 'currentStates' | 'desiredStates'; state: StateItem } }
   | { type: 'UPDATE_STATE'; payload: { dimensionId: string; stateType: 'currentStates' | 'desiredStates'; state: StateItem } }
-  | { type: 'DELETE_STATE'; payload: { dimensionId: string; stateType: 'currentStates' | 'desiredStates'; stateId: string } };
+  | { type: 'DELETE_STATE'; payload: { dimensionId: string; stateType: 'currentStates' | 'desiredStates'; stateId: string } }
+  | { type: 'ADD_RECOMMENDATION'; payload: Recommendation }
+  | { type: 'UPDATE_RECOMMENDATION'; payload: Recommendation }
+  | { type: 'DELETE_RECOMMENDATION'; payload: string };
